@@ -26,26 +26,7 @@ function createRequestObject() {
 }
 
 
-function sendRequest() {
-	
-	var rnd = Math.random();
-	var name = escape(document.getElementById("name").value);
-	var email = escape(document.getElementById("email").value);
-	var subject = escape(document.getElementById("subject").value);
-	var body = document.getElementById("body").value;
 
-	try{
-    http.open('POST',  'php/contactform.php');
-    http.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    http.onreadystatechange = handleResponse;
-		http.send('name='+name+'&email='+email+'&subject='+subject+'&body='+body+'&rnd='+rnd);
-	}
-	catch(e){}
-	finally{
-	jQuery('#contactform').slideUp("slow").hide();
-	jQuery('#contactWrapper').append('<div class="success"><h4>Email Successfully Sent!</h4><br><p>Thank you for using our contact form <strong>'+decodeURIComponent(name)+'</strong>! Your email was successfully sent and we&#39;ll be in touch with you soon.</p></div>');
-	}
-}
 function sendRequest_booking() {
 	
 	var rnd = Math.random();
@@ -183,10 +164,10 @@ function check_values() {
 	{
 	 email = document.getElementById("email").value;
 	}
-	if(typeof $j('#contactform #subject').val() != "undefined" )
-	{
-	 subject = document.getElementById("subject").value;
-	}
+	// if(typeof $j('#contactform #subject').val() != "undefined" )
+	// {
+	//  subject = document.getElementById("subject").value;
+	// }
 	if(typeof $j('#contactform #body').val() != "undefined" )
 	{
 	 body = document.getElementById("body").value;
@@ -219,17 +200,17 @@ function check_values() {
 		$j('#contactform #email').parent().find(".error").remove();
 		
 		
-		if($j('#contactform #subject').val()!=undefined)
-		if($j('#contactform #subject').val()==''){
-		var hasClass=$j('#contactform #subject').parent().find(".error").hasClass("error");
-	 	if(!hasClass)
-	 	    $j('#contactform #subject').parent().append('<label for="contactname" generated="true" class="error">You need to enter a subject!</label>');	
-			$j('#contactform #subject').focus();
-			//return false;
-			errors++;
-		}
-		else
-		$j('#contactform #subject').parent().find(".error").remove();
+		// if($j('#contactform #subject').val()!=undefined)
+		// if($j('#contactform #subject').val()==''){
+		// var hasClass=$j('#contactform #subject').parent().find(".error").hasClass("error");
+	 	// if(!hasClass)
+	 	//     $j('#contactform #subject').parent().append('<label for="contactname" generated="true" class="error">You need to enter a subject!</label>');	
+		// 	$j('#contactform #subject').focus();
+		// 	//return false;
+		// 	errors++;
+		// }
+		// else
+		// $j('#contactform #subject').parent().find(".error").remove();
 		
 		if($j('#contactform #body').val()!=undefined)
 		if($j('#contactform #body').val()==''){
@@ -248,7 +229,7 @@ function check_values() {
 	if(errors==0) {
 			document.getElementById("submit").disabled=true;
 			document.getElementById("submit").value='Please Wait..';
-			sendRequest();
+			//sendRequest();
 	}
 }
 function check_values_loans() {
