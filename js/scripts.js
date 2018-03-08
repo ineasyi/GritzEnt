@@ -345,7 +345,7 @@ function niceScrollFix() {
 		}
 	}
 }
-	jQuery(window).on('load', function(){
+	jQuery(window).load(function(){
 		mfn_equalH_wrap();
 		mfn_equalH();
 	});

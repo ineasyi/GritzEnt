@@ -11,7 +11,7 @@
 
     <!-- Basic Page Needs -->
     <meta charset="utf-8">
-    <title>Gritz Enterprise</title>
+    <title>Be</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -33,7 +33,6 @@
     <link rel='stylesheet' href='css/structure.css'>
     <link rel='stylesheet' href='css/elearning.css'>
     <link rel='stylesheet' href='css/custom.css'>
-
 
 </head>
 
@@ -157,7 +156,7 @@
                                                 </p>
                                             </div>
                                         </div>
-                                        <!-- <div class="column mcb-column one-second column_column">
+                                        <div class="column mcb-column one-second column_column">
                                             <div class="column_attr clearfix">
                                                 <h3 class="themecolor">Info</h3>
                                                 <hr class="no_line" style="margin:0 auto 5px">
@@ -165,7 +164,7 @@
                                                     Duis dignissim mi ut laoreet mollis. Nunc id tellus finibus, eleifend mi vel, maximus justo. Maecenas mi tortor, pellentesque a aliquam ut, fringilla eleifend lectus. Maecenas ultrices tellus sit amet sem placerat tempor.
                                                 </p>
                                             </div>
-                                        </div> -->
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -180,7 +179,7 @@
                                                 <h2>Contact Us</h2>
                                                 <hr class="no_line" style="margin:0 auto 10px">
                                                 <div id="contactWrapper">
-                                                    <form id="contactform" method="post" action="https://casinternal.com/api/values" name="contact">
+                                                    <form id="contactform">
                                                         <!-- One Second (1/2) Column -->
                                                         <div class="column one-second">
                                                             <input placeholder="Your name" type="text" name="name" id="name" size="40" aria-required="true" aria-invalid="false" />
@@ -193,15 +192,9 @@
                                                             <textarea placeholder="Message" name="message" id="body" style="width:100%;" rows="10" aria-invalid="false"></textarea>
                                                         </div>
                                                         <div class="column one">
-                                                                <input type="text" name="siteId" id="siteId" value="GRT" style="display:none;">
-                                                                <input type="text" name="siteKey" class="textbox" id="response" value="" style="display:none;">                            
-                                                            <input type="submit" value="Send A Message" id="submit" onClick="return check_values();">
+                                                            <input type="button" value="Send A Message" id="submit" onClick="return check_values();">
                                                         </div>
                                                     </form>
-                                                    <form action="https://casinternal.com/api/values" name="tokenForm" method="post" id="tokenForm" style="display:none;">
-                                                        <input type="text" name="siteId" id="siteId" value="GRT">
-                                                    </form>
-                            
                                                 </div>
                                             </div>
                                         </div>
@@ -222,9 +215,9 @@
                                                 <p class="themecolor">
                                                     Mauris rhoncus orci in imperdiet placerat. Vestibulum euismod nisl suscipit ligula volutpat, a feugiat urna maximus. Cras massa nibh, tincidunt ut eros a, vulputate consequat odio. Vestibulum vehicula tempor nulla, sed hendrerit urna interdum in.
                                                 </p>
-                                                <!-- <p>
+                                                <p>
                                                     Duis dignissim mi ut laoreet mollis. Nunc id tellus finibus, eleifend mi vel.
-                                                </p> -->
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
@@ -439,18 +432,19 @@
     <div id="body_overlay"></div>
 
     <!-- JS -->
-    <script src="../../js/jquery-3.1.1.js"></script>
+    <script src="../../js/jquery-2.1.4.min.js"></script>
+
     <script src="../../js/mfn.menu.js"></script>
-    
+    <script src="../../js/jquery.plugins.js"></script>
     <script src="../../js/jquery.jplayer.min.js"></script>
     <script src="../../js/animations/animations.js"></script>
     <script src="../../js/translate3d.js"></script>
-    <!-- <script src="../../js/scripts.js"></script> -->
+    <script src="../../js/scripts.js"></script>
 
-    <!-- <script src="../../js/email.js"></script> -->
-    
+    <script src="../../js/email.js"></script>
+
     <script id="mfn-dnmc-retina-js">
-        jQuery(window).on('load', function () {
+        jQuery(window).load(function () {
             var retina = window.devicePixelRatio > 1 ? true : false;
             if (retina) {
                 var retinaEl = jQuery("#logo img.logo-main");
@@ -472,24 +466,6 @@
             }
         });
     </script>
-       
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#tokenForm').submit(function () { // catch the form's submit event
-                $.ajax({ // create an AJAX call...
-                    data: $(this).serialize(), // get the form data
-                    type: $(this).attr('method'), // GET or POST
-                    url: $(this).attr('action'), // the file to call
-                    success: function (data) { // on success..
-                        $('#response').val(data); // update the DIV
-                    }
-                });
-                return false; // cancel original event to prevent form submitting
-            });
-            $('#tokenForm').submit();
-        });
-    </script>
-
 
 </body>
 
